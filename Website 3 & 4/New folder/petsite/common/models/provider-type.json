@@ -1,0 +1,28 @@
+{
+  "name": "provider_type",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "provider_type_id": {
+      "type": "number",
+      "required": true
+    },
+    "provider_type_name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "providers": {
+      "type": "hasMany",
+      "model": "provider",
+      "foreignKey": "provider_type_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script src="clientApp.js"></script>
+  <script src="lb-services.js"></script>
+</head>
+
+<body class="p-0">
+  <div ng-app="clientApp" ng-controller="AppCtrl">
+    <div>
+      <div class="text-white bg-primary text-center py-5">
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-md-3">
+              <h1 class="text-left">Create Project</h1>
+            </div>
+            <div class="col-md-5">
+                <img style="height:100px ;width:80% " src="client/img/arkilio.png">
+                </div>
+                <div class="col-md-2">
+                    <img src="client/img/home.png" ng-click="backPage()"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+              <p class="lead">Company</p>
+            </div>
+            <div class="col-md-2">
+              <div class="btn-group"> <select ng-model="c_id" class="btn btn-outline-primary dropdown-toggle">
+                    <option value="">Select Client</option>
+                    <option ng-repeat="x in clients track by x.id" class="form-control mr-3 my-1" value="{{x.id}}">{{x.client_name}}</option>
+                  </select> </div>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+      <form name="ProjectForm">
+      <div class="py-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2"></div>
+           
+            <div class="col-md-2">
+              <p class="lead">Project Name</p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" name="ProjectName" ng-model="ProjectName" class="form-control mr-3 my-1" placeholder="Project Name" id="inlineFormInputGroup" required> 
+              <div class="alert alert-danger" ng-if="ProjectForm.ProjectName.$touched && ProjectForm.ProjectName.$invalid">Project name is required.</div>
+            </div>
+         
+          </div>
+        </div>
+      </div>
+      <div class="py-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+              <p class="lead">Project Description</p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" ng-model="ProjectDesc" class="form-control mr-3 my-1" placeholder="Project Description" id="inlineFormInputGroup"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+              <p class="lead">Project Address</p>
+            </div>
+            <div class="col-md-5">
+              <input type="text" ng-model="Address" class="form-control mr-3 my-1" placeholder="Street Address" id="inlineFormInputGroup"> </div>
+            <div class="col-md-3">
+              <input type="text" ng-model="City" class="form-control mr-3 my-1" placeholder="City" id="inlineFormInputGroup"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+              <input type="text" ng-model="Province" class="form-control mr-3 my-1" placeholder="Province" id="inlineFormInputGroup"> </div>
+            <div class="col-md-2">
+              <input type="text" ng-model="Country" class="form-control mr-3 my-1" placeholder="Country" id="inlineFormInputGroup"> </div>
+            <div class="col-md-2">
+              <input type="text" ng-model="PostalCode" class="form-control mr-3 my-1" placeholder="Postal Code" id="inlineFormInputGroup"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2">
+              <p class="lead">Invoice Frequency</p>
+            </div>
+            <div class="col-md-2"> <label>  <input type="radio" ng-model="Freq" name="invoice" value="monthly"> Monthly</label> </div>
+            <div class="col-md-2"> <label>  <input type="radio" ng-model="Freq" name="invoice" value="milestone"> Milestone</label></div>
+            <div class="col-md-4">
+              <p class="">(** if monthly, will send monthly reminders in addition to pre-configured milestone reminders)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="">Payment Phases of Proposal/Contract and Reminders</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-1">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-1">
+              <p class="lead">Total </p>
+            </div>
+            <p class="lead">$</p>
+            <div class="col-md-2">
+              <input type="text" ng-model="TotalCost" ng-change="change()" class="form-control mr-3 my-1" id="inlineFormInputGroup"> </div>
+            <div class="col-md-2">
+              <input type="text" ng-model="ProjectDue" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD"> </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <p class="lead">Type</p>
+          </div>
+          <div class="col-md-1">
+            <p class="lead">Percent</p>
+          </div>
+          <div class="col-md-2">
+            <p class="lead">Amount</p>
+          </div>
+          <div class="col-md-2">
+            <p class="lead">Due Date</p>
+          </div>
+          <div class="col-md-2">
+            <p class="lead">Reminder Date</p>
+          </div>
+          <div class="col-md-1 ">
+            <p class="lead">Complete</p>
+          </div>
+          <div class="col-md-1 ">
+            <p class="lead">Paid</p>
+          </div>
+        </div>
+      </div>
+      <div class="py-1" ng-repeat="milestone in milestonedesc track by $index">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <p class="lead">{{milestonedesc[$index]}}</p>
+            </div>
+            <div class="col-md-1">
+              <input type="text" ng-model="Percent[$index]" ng-change="change()" class="form-control mr-3 my-1" id="inlineFormInputGroup"> </div>
+            <div class="col-md-2">
+              <p type="text" ng-model="Amount[$index]" class="form-control mr-3 my-1 " placeholder="$" id="inlineFormInputGroup">${{Amount[$index]}}</p>
+            </div>
+            <div class="col-md-2">
+              <input type="text" ng-model="Deadline[$index]" class="form-control mr-3 my-1 " placeholder="YYYY-MM-DD"> </div>
+            <div class="col-md-2">
+              <input type="text" ng-model="Reminder[$index]" class="form-control mr-3 my-1 " placeholder="YYYY-MM-DD"> </div>
+            <div class="col-md-1">
+              <input type="checkbox" ng-model="Complete[$index]" value="on" name="check2"> </div>
+            <div class="col-md-1 ">
+              <input type="checkbox" ng-model="Paid[$index]" value="on" name="check2"> </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <p class="lead">Reminder Recipient 1</p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" ng-model="Reminder1" class="form-control mr-3 my-1" placeholder="Email" id="inlineFormInputGroup"> </div>
+            <div class="col-md-2">
+              <div class="btn-group">
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <p class="lead">Reminder Recipient 2</p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" ng-model="Reminder2" class="form-control mr-3 my-1" placeholder="Email" id="inlineFormInputGroup"> </div>
+            <div class="col-md-2">
+              <div class="btn-group">
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <p class="lead">Reminder Recipient 3</p>
+            </div>
+            <div class="col-md-8">
+              <input type="text" ng-model="Reminder3" class="form-control mr-3 my-1" placeholder="Email" id="inlineFormInputGroup"> </div>
+            <div class="col-md-2">
+              <div class="btn-group">
+                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="">Proposal/Contract Documents</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-2">
+        <div class="container">
+          <form method="POST" action="http://localhost:3000/upload" enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-md-2">
+                <p class="lead">Proposal</p>
+              </div>
+              <div class="col-md-5">
+                <input type="text" ng-model="Proposal" class="form-control mr-3 my-1" placeholder="copy your google drive link " id="inlineFormInputGroup"> </div>
+              <div class="col-md-2">
+                <input ng-model="Proposal" name="Proposal" class="btn btn-primary text-center mx-auto" type="file"> </div>
+              <div class="col-md-2">
+                <input type="submit" value="Submit"> </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="py-2">
+        <div class="container">
+          <form method="POST" action="http://localhost:3000/upload" enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-md-2">
+                <p class="lead">Contract</p>
+              </div>
+              <div class="col-md-5">
+                <input type="text" ng-model="Contract" class="form-control mr-3 my-1" placeholder="copy your google drive link " id="inlineFormInputGroup"> </div>
+              <div class="col-md-2">
+                <input ng-model="Contract" name="Contract" class="btn btn-primary text-center mx-auto" type="file"> </div>
+              <div class="col-md-2">
+                <input type="submit" value="Submit"> </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="py-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <a class="btn btn-light" href="">Add Document</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+              <a ng-click="backPage()" class="btn btn-lg w-75 m-0 btn-danger" href="">Cancel</a>
+            </div>
+            <div class="col-md-3">
+                <a ng-click="addProject()" class="btn btn-lg w-75 text-white btn-success" href="">Create</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+          </form>
+  </div>
+</body>
+
+</html>

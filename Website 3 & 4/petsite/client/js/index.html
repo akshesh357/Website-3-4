@@ -1,0 +1,47 @@
+<html lang="en" >
+<head>
+<!-- Load Stylesheet -->
+<link rel="stylesheet" href="">
+
+</head>
+<body> 
+  <div ng-app="petApp" ng-controller="AppCtrl" ng-service="services">
+  <!-- <div ng-repeat="provider_type in provider_types">
+    {{provider_type.provider_type_name}}
+
+  </div> -->
+  id:<input ng-model="add"><br><br>
+  Name:<input ng-model="addMe"><br><br>
+  <button ng-click="addItem()">Add</button><br>
+  <br>
+
+  <select>
+
+<option ng-click="Item()" ng-repeat="provider_type in provider_types" >{{provider_type.provider_type_name}}
+</option>
+<!-- {{dosome()}}-->
+</select>
+<div class="row">
+		<div class="col-md-4">
+			<table class="table table-striped">
+				<tr ng-repeat='provider_type in provider_types'>
+					<td><input type="checkbox" ng-true-value="false" ng-false-value="true" ng-model="provider_types.isDone" ng-change="update(provider_types)"></td>
+					<td>{{provider_type.provider_type_name}}</td>
+
+				</tr>
+			</table>
+		</div>
+	</div>
+<input type='text' ng-model="pro.provider_type_name">
+
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+
+<script src="app.js"></script>
+<script src="pet-services.js"></script>
+
+</body>
+</html>

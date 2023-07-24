@@ -1,0 +1,56 @@
+{
+  "name": "Milestone",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "typeof_milestone": {
+      "type": "string",
+      "required": true
+    },
+    "percentage": {
+      "type": "string",
+      "required": true
+    },
+    "priceof_milestone": {
+      "type": "string",
+      "required": true
+    },
+    "deadline": {
+      "type": "date",
+      "required": true
+    },
+    "reminder": {
+      "type": "date",
+      "required": true
+    },
+    "completed": {
+      "type": "boolean",
+      "required": true
+    },
+    "paid": {
+      "type": "boolean",
+      "required": true
+    },
+    "project_id": {
+      "type": "number",
+      "required": true
+    },
+    "file_upload": {
+      "type": "object",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "project": {
+      "type": "belongsTo",
+      "model": "Project",
+      "foreignKey": "id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

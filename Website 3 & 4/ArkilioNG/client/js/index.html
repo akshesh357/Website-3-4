@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script src="clientApp.js"></script>
+   <script src="lb-services.js"></script>
+   <style>
+   
+   </style>
+ </head>
+
+<body>
+  <div ng-app="clientApp" ng-controller="AppCtrl">
+     
+
+          <div  ng-include="include.html"></div>
+        
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"> </div>
+        <div class="col-md-6">
+          <div class="card text-white p-5 bg-primary">
+            <div class="card-body">
+              <!-- <h1 class="mb-4">ARKILIO Construction Performance Made Simple</h1> -->
+              <img style="height:100% ;width:100% " src="client/img/arkilio.png">
+              <form>
+                <div class="form-group"> <label>Email address</label>
+                  <input ng-model="email"type="email" class="form-control" placeholder="Enter email"> </div>
+                <div class="form-group"> <label>Password</label>
+                  <input ng-model="password" type="password" class="form-control" placeholder="Password"> </div>
+                <button type="submit" ng-click="clientLogin()" class="btn btn-secondary">Login</button>
+              </form>
+              <!-- <input type="submit" onclick="alert('hii')" class="btn btn-lg btn-light text-left" value="LogIn"> -->
+              <!-- <input type="submit"ng-click="clientLogin()" class="btn btn-outline-primary" value="LogIn"> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</div>
+</body>
+<!-- <app-client></app-client>
+
+
+<app-invoice></app-invoice>
+
+ <app-project></app-project>
+
+ <app-project-listing></app-project-listing> -->
+</html>

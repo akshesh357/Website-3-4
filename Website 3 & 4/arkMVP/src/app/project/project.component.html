@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> </head>
+
+<body class="p-0">
+  <div class="text-white bg-primary text-center py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-left">Create Project</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <p class="lead">Client</p>
+        </div>
+        <div class="col-md-2">
+          <div class="btn-group">
+            <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown"> Client Name</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <p class="lead">Project</p>
+        </div>
+        <div class="col-md-2">
+          <p class="lead">Project Number</p>
+        </div>
+        <div class="col-md-8
+                    ">
+          <input type="text" class="form-control mr-3 my-1" placeholder="Project Number" id="inlineFormInputGroup"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+          <p class="lead">Project Name</p>
+        </div>
+        <div class="col-md-8
+                    ">
+          <input type="text" class="form-control mr-3 my-1" placeholder="Project Name" id="inlineFormInputGroup"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+          <p class="lead">Project Address</p>
+        </div>
+        <div class="col-md-3
+                    ">
+          <input type="text" class="form-control mr-3 my-1" placeholder="Street Address" id="inlineFormInputGroup"> </div>
+        <div class="col-md-3
+                    ">
+          <input type="text" class="form-control mr-3 my-1" placeholder="City, Province" id="inlineFormInputGroup"> </div>
+        <div class="col-md-2
+                    ">
+          <input type="text" class="form-control mr-3 my-1" placeholder="Country" id="inlineFormInputGroup"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+          <p class="lead">Invoice Frequency</p>
+        </div>
+        <div class="col-md-3
+                    ">
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Monthly&nbsp;</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3
+                    ">
+          <p class="lead">(** if monthly, will send monthly reminders in addition to pre-configured milestone reminders)</p>
+        </div>
+        <div class="col-md-2
+                    "></div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="">Payment Phases of Proposal/Contract and Reminders</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="lead">Type</p>
+          <input type="text" ng-model="percent" class="form-control mr-3 my-1" placeholder="Schematic Design" id="inlineFormInputGroup"> </div>
+        <div class="col-md-1">
+          <p class="lead">Percent</p>
+          <input type="text" class="form-control mr-3 my-1" placeholder="%" id="inlineFormInputGroup" ng-model="percent"> </div>
+        <div class="col-md-2">
+          <p class="lead">Amount</p>
+          <input type="text" ng-model="amount" class="form-control mr-3 my-1" placeholder="$" id="inlineFormInputGroup"> </div>
+        <div class="col-md-2">
+          <p class="lead">Due Date</p>
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="reminder"> </div>
+        <div class="col-md-2">
+          <p class="lead">Reminder Date</p>
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="deadline"> </div>
+        <div class="col-md-1 ">
+          <p class="lead">Complete</p>
+        </div>
+        <div class="col-md-1 ">
+          <p class="lead">Paid</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" ng-model="percent" class="form-control mr-3 my-1" placeholder="Design Development" id="inlineFormInputGroup"> </div>
+        <div class="col-md-1">
+          <input type="text" class="form-control mr-3 my-1" placeholder="%" id="inlineFormInputGroup" ng-model="percent"> </div>
+        <div class="col-md-2">
+          <input type="text" ng-model="amount" class="form-control mr-3 my-1" placeholder="$" id="inlineFormInputGroup"> </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="reminder"> </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="deadline"> </div>
+        <div class="col-md-1 ">
+          <p class="lead">Check</p>
+        </div>
+        <div class="col-md-1 ">
+          <p class="lead">Check</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" ng-model="percent" class="form-control mr-3 my-1" placeholder="Construction Documents" id="inlineFormInputGroup"> </div>
+        <div class="col-md-1">
+          <input type="text" class="form-control mr-3 my-1" placeholder="%" id="inlineFormInputGroup" ng-model="percent"> </div>
+        <div class="col-md-2">
+          <input type="text" ng-model="amount" class="form-control mr-3 my-1" placeholder="$" id="inlineFormInputGroup"> </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="reminder"> </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="deadline"> </div>
+        <div class="col-md-1 ">
+          <p class="lead">Check</p>
+        </div>
+        <div class="col-md-1 ">
+          <p class="lead">Check</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" ng-model="percent" class="form-control mr-3 my-1" placeholder="Bidding and Negotiation" id="inlineFormInputGroup"> </div>
+        <div class="col-md-1">
+          <input type="text" class="form-control mr-3 my-1" placeholder="%" id="inlineFormInputGroup" ng-model="percent"> </div>
+        <div class="col-md-2">
+          <input type="text" ng-model="amount" class="form-control mr-3 my-1" placeholder="$" id="inlineFormInputGroup"> </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="reminder"> </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="deadline"> </div>
+        <div class="col-md-1 ">
+          <p class="lead">Check</p>
+        </div>
+        <div class="col-md-1 ">
+          <p class="lead">Check</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" ng-model="percent" class="form-control mr-3 my-1" placeholder="Construction Administration" id="inlineFormInputGroup"> </div>
+        <div class="col-md-1">
+          <input type="text" class="form-control mr-3 my-1" placeholder="%" id="inlineFormInputGroup" ng-model="percent"> </div>
+        <div class="col-md-2">
+          <input type="text" ng-model="amount" class="form-control mr-3 my-1" placeholder="$" id="inlineFormInputGroup"> </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="reminder"> </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD" id="inlineFormInputGroup" ng-model="deadline"> </div>
+        <div class="col-md-1 ">
+          <p class="lead">Check</p>
+        </div>
+        <div class="col-md-1 ">
+          <p class="lead">Check</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <p class="lead">Reminder Recipient 1</p>
+        </div>
+        <div class="col-md-6
+
+
+                    ">
+          <input type="text" ng-model="DDate" class="form-control mr-3 my-1" placeholder="email" id="inlineFormInputGroup"> </div>
+        <div class="col-md-2">
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <p class="lead">Reminder Recipient 1</p>
+        </div>
+        <div class="col-md-6
+
+
+                    ">
+          <input type="text" ng-model="DDate" class="form-control mr-3 my-1" placeholder="email" id="inlineFormInputGroup"> </div>
+        <div class="col-md-2">
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="">Proposal/Contract Documents</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" ng-model="DDate" class="form-control mr-3 my-1" placeholder="Document Name" id="inlineFormInputGroup"> </div>
+        <div class="col-md-2
+
+
+                    ">
+          <a class="btn btn-primary text-center mx-auto" href="">Choose File...</a>
+        </div>
+        <div class="col-md-3">
+          <p class="lead">(file name uploads here)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="btn btn-light" href="">Add Document</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <a class="btn btn-lg w-75 m-0 btn-danger" href="">Cancel</a>
+        </div>
+        <div class="col-md-3">
+          <a class="btn btn-lg w-75 text-white btn-success" href="">Create</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

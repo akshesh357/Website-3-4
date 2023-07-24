@@ -1,0 +1,325 @@
+<body class="p-0">
+    
+     <div class="text-white bg-primary text-center py-5">
+       <div class="container">
+         <div class="row">
+           
+           <div class="col-md-3">
+             <h1 class="text-left">Create Project</h1>
+           </div>
+           <div class="col-md-5">
+               <img style="height:100px ;width:80% " src="../assets/img/arkilio.png">
+               </div>
+               <div class="col-md-2">
+                   <img src="../assets/img/home.png" routerLink="/projectlistingpage" routerLinkActive="active"> </div>
+         </div>
+       </div>
+     </div>
+     <div class="py-2">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-2"></div>
+           <div class="col-md-2">
+             <p class="lead">Company</p>
+           </div>
+           <div class="col-md-2">
+             <div class="btn-group"> 
+               <select [(ngModel)]="CompanyId" name="CompanyId" class="btn btn-outline-primary dropdown-toggle">
+                   <option value="">Select Client</option>
+                   <option *ngFor="let x of clientarray; let i = id" class="form-control mr-3 my-1" [ngValue]="x.id">{{x.client_name}}</option>
+                 </select> </div>
+           </div>
+           <div class="col-md-4"></div>
+           <div class="col-md-4"></div>
+         </div>
+       </div>
+     </div>
+     <form name="ProjectForm">
+     <div class="py-2">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-2"></div>
+          
+           <div class="col-md-2">
+             <p class="lead">Project Name</p>
+           </div>
+           <div class="col-md-8">
+             <input type="text" [(ngModel)]="ProjectName" name="ProjectName" class="form-control mr-3 my-1" placeholder="Project Name" id="inlineFormInputGroup" required> 
+             <!-- <div class="alert alert-danger" ng-if="ProjectForm.ProjectName.$touched && ProjectForm.ProjectName.$invalid">Project name is required.</div> -->
+           </div>
+        
+         </div>
+       </div>
+     </div>
+     <div class="py-2">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-2"></div>
+           <div class="col-md-2">
+             <p class="lead">Project Description</p>
+           </div>
+           <div class="col-md-8">
+             <input type="text" [(ngModel)]="ProjectDesc" name="ProjectDesc" class="form-control mr-3 my-1" placeholder="Project Description" id="inlineFormInputGroup"> </div>
+         </div>
+       </div>
+     </div>
+     <div class="py-2">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-2"></div>
+           <div class="col-md-2">
+             <p class="lead">Project Address</p>
+           </div>
+           <div class="col-md-5">
+             <input type="text" [(ngModel)]="Address" name="Address" class="form-control mr-3 my-1" placeholder="Street Address" id="inlineFormInputGroup"> </div>
+           <div class="col-md-3">
+             <input type="text" [(ngModel)]="City" name="City" class="form-control mr-3 my-1" placeholder="City" id="inlineFormInputGroup"> </div>
+         </div>
+       </div>
+     </div>
+     <div class="py-2">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-2"></div>
+           <div class="col-md-2"></div>
+           <div class="col-md-2">
+             <input type="text" [(ngModel)]="Province" name="Province" class="form-control mr-3 my-1" placeholder="Province" id="inlineFormInputGroup"> </div>
+           <div class="col-md-2">
+             <input type="text" [(ngModel)]="Country" name="Country" class="form-control mr-3 my-1" placeholder="Country" id="inlineFormInputGroup"> </div>
+           <div class="col-md-2">
+             <input type="text" [(ngModel)]="PostalCode" name="PostalCode" class="form-control mr-3 my-1" placeholder="Postal Code" id="inlineFormInputGroup"> </div>
+         </div>
+       </div>
+     </div>
+     <div class="py-2">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-2"></div>
+           <div class="col-md-2">
+             <p class="lead">Invoice Frequency</p>
+           </div>
+           <div class="col-md-2"> <label>  <input type="radio" [(ngModel)]="Freq" name="invoice" value="monthly"> Monthly</label> </div>
+           <div class="col-md-2"> <label>  <input type="radio" [(ngModel)]="Freq" name="invoice" value="milestone"> Milestone</label></div>
+           <div class="col-md-4">
+             <p class="">(** if monthly, will send monthly reminders in addition to pre-configured milestone reminders)</p>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="py-5">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-12">
+             <h1 class="">Payment Phases of Proposal/Contract and Reminders</h1>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="py-1">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-3"></div>
+           <div class="col-md-1">
+             <p class="lead">Total </p>
+           </div>
+           <p class="lead">$</p>
+           <div class="col-md-2">
+             <input type="text" [(ngModel)]="TotalCost" name="TotalCost" (keyup)="changeAmount()" class="form-control mr-3 my-1" id="inlineFormInputGroup"> </div>
+           <div class="col-md-1" >
+
+              <ng-datepicker [(ngModel)]="ProjectDue"  position="top-right" name="ProjectDue"  [options]="options" placeholder="YYYY-MM_DD"  ></ng-datepicker>
+             
+              <!-- <input matInput   [(ngModel)]="ProjectDue"  [matDatepicker]="picker"  placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker> -->
+             <!-- <input type="text"  [(ngModel)]="ProjectDue" name="ProjectDue" class="form-control mr-3 my-1" placeholder="YYYY-MM-DD"> -->
+            </div> 
+           <div class="col-md-2"></div>
+         </div>
+       </div>
+     </div>
+     <table class="table table-bordered table-striped responsive-utilities table-responsive">
+       <!-- <table datatable class="row-border hover"> -->
+        <thead>
+        <tr>
+          <th >
+              Type
+          </th>
+          <th>
+              Percent
+          </th>
+          <th>
+              Amount
+            </th>
+            <th>
+                Due Date
+              </th>
+              <th>
+                  Reminder Date
+                </th>
+                <th>
+                    Complete
+                  </th>
+                  <th>
+                      Paid
+                    </th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let milestone of milestonedesc; let i =  index">
+          <tr>
+            <td>
+                {{milestonedesc[i]}}
+            </td>
+            <td>
+                <input type="text" [(ngModel)]="Percent[i]" name="Percent-{{i}}"  class="form-control mr-3 my-1" id="inlineFormInputGroup" > 
+            </td>
+            <td>
+                <p type="text" [(ngModel)]="Amount[i]" name="Amount" (keyup)="changeAmount()" class="form-control mr-3 my-1 " placeholder="$" id="inlineFormInputGroup" ngDefaultControl>${{Amount[i]}}</p>
+            </td>
+            <td>
+                <ng-datepicker [(ngModel)]="Deadline[i]" position="top-right" name="Deadline-{{i}}" [options]="options" placeholder="YYYY-MM_DD"></ng-datepicker>
+            </td>
+            <td>
+                <ng-datepicker [(ngModel)]="Reminder[i]" position="top-right" name="Reminder-{{i}}"  [options]="options" placeholder="YYYY-MM_DD"></ng-datepicker>
+            </td>
+            <td>
+                <input type="checkbox" [(ngModel)]="Complete[i]" name="Complete" value="on" name="check2"> 
+            </td>
+            <td>
+                <input type="checkbox" [(ngModel)]="Paid[i]" name="Paid" value="on" name="check2">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+     <div class="p-3">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-2">
+             <p class="lead">Reminder Recipient 1</p>
+           </div>
+           <div class="col-md-8">
+             <input type="text" [(ngModel)]="Reminder1" name="Reminder1" class="form-control mr-3 my-1" placeholder="Email" id="inlineFormInputGroup"> </div>
+           <div class="col-md-2">
+             <div class="btn-group">
+               <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+               <div class="dropdown-menu">
+                 <a class="dropdown-item" href="#">Action</a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="#">Separated link</a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="p-3">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-2">
+             <p class="lead">Reminder Recipient 2</p>
+           </div>
+           <div class="col-md-8">
+             <input type="text" [(ngModel)]="Reminder2" name="Reminder2" class="form-control mr-3 my-1" placeholder="Email" id="inlineFormInputGroup"> </div>
+           <div class="col-md-2">
+             <div class="btn-group">
+               <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+               <div class="dropdown-menu">
+                 <a class="dropdown-item" href="#">Action</a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="#">Separated link</a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="p-3">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-2">
+             <p class="lead">Reminder Recipient 3</p>
+           </div>
+           <div class="col-md-8">
+             <input type="text" [(ngModel)]="Reminder3" name="Reminder3" class="form-control mr-3 my-1" placeholder="Email" id="inlineFormInputGroup"> </div>
+           <div class="col-md-2">
+             <div class="btn-group">
+               <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+               <div class="dropdown-menu">
+                 <a class="dropdown-item" href="#">Action</a>
+                 <div class="dropdown-divider"></div>
+                 <a class="dropdown-item" href="#">Separated link</a>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="py-3">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-12">
+             <h1 class="">Proposal/Contract Documents</h1>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="py-2">
+       <div class="container">
+         <form method="POST" action="http://localhost:3000/upload" enctype="multipart/form-data">
+           <div class="row">
+             <div class="col-md-2">
+               <p class="lead">Proposal</p>
+             </div>
+             <div class="col-md-5">
+               <input type="text" [(ngModel)]="Proposal" name="Proposal" class="form-control mr-3 my-1" placeholder="copy your google drive link " id="inlineFormInputGroup"> </div>
+             <div class="col-md-2">
+               <input [(ngModel)]="Proposal" name="Proposal" class="btn btn-primary text-center mx-auto" type="file"> </div>
+             <div class="col-md-2">
+               <input type="submit" value="Submit"> </div>
+           </div>
+         </form>
+       </div>
+     </div>
+     <div class="py-2">
+       <div class="container">
+         <form method="POST" action="http://localhost:3000/upload" enctype="multipart/form-data">
+           <div class="row">
+             <div class="col-md-2">
+               <p class="lead">Contract</p>
+             </div>
+             <div class="col-md-5">
+               <input type="text" [(ngModel)]="Contract" name="Contract" class="form-control mr-3 my-1" placeholder="copy your google drive link " id="inlineFormInputGroup"> </div>
+             <div class="col-md-2">
+               <input [(ngModel)]="Contract" name="Contract" class="btn btn-primary text-center mx-auto" type="file"> </div>
+             <div class="col-md-2">
+               <input type="submit" value="Submit"> </div>
+           </div>
+         </form>
+       </div>
+     </div>
+     <div class="py-2">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-12">
+             <a class="btn btn-light" href="">Add Document</a>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="py-5">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-3"></div>
+           <div class="col-md-3"></div>
+           <div class="col-md-3">
+             <a  class="btn btn-lg w-75 m-0 btn-danger" routerLink="/projectlistingpage" routerLinkActive="active">Cancel</a>
+           </div>
+           <div class="col-md-3">
+               <a (click)="addProject()" class="btn btn-lg w-75 text-white btn-success" >Create</a>
+         </div>
+       </div>
+     </div>
+   </div>
+  </form>
+</body>

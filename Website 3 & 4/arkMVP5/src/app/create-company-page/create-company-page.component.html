@@ -1,0 +1,114 @@
+<body class="p-0">
+  <div class="py-5 text-white bg-primary text-center">
+    <div class="container">
+      <div class="row">
+       
+        <div class="col-md-4">
+          <h1 class="text-left">Create Company</h1>
+        </div>
+        <div class="col-md-5">
+            <img style="height:100px ;width:80% " src="../assets/img/arkilio.png">
+            </div>
+        <div class="col-md-2">
+            <img src="../assets/img/home.png" routerLink="/projectlistingpage" routerLinkActive="active"> </div>
+      </div>
+    </div>
+  </div>
+  <form name="ClientForm">
+  <div class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="lead">Company</p>
+        </div>
+        <div class="col-md-9">
+          <input type="text" name="CompanyName" [(ngModel)]="CompanyName" class="form-control mr-3 my-1" placeholder="Company Name" id="inlineFormInputGroup" #Companyname="ngModel" required>
+          <div class="alert alert-danger" *ngIf="Companyname.invalid">Company name is required.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="lead"></p>
+        </div>
+        <div class="col-md-5">
+          <input type="text" [(ngModel)]="Address" name="Address" class="form-control mr-3 my-1" placeholder="Street Address" id="inlineFormInputGroup"> </div>
+        <div class="col-md-4">
+          <input type="text" [(ngModel)]="City" name="City" class="form-control mr-3 my-1" placeholder="City" id="inlineFormInputGroup"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="lead"></p>
+        </div>
+        <div class="col-md-3">
+          <input type="text" [(ngModel)]="Province" name="Province" class="form-control mr-3 my-1" placeholder="Province" id="inlineFormInputGroup"> </div>
+        <div class="col-md-3">
+          <input type="text" [(ngModel)]="Country" name="Country" class="form-control mr-3 my-1" placeholder="Country" id="inlineFormInputGroup"> </div>
+        <div class="col-md-3">
+          <input type="text" [(ngModel)]="PostalCode" name="PostalCode" class="form-control mr-3 my-1" placeholder="Postal Code" id="inlineFormInputGroup"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="lead"></p>
+        </div>
+        <div class="col-md-9">
+          <input type="email" name="Email" [(ngModel)]="Email" class="form-control mr-3 my-1" placeholder="example@gmail.com" id="inlineFormInputGroup" #Emailname=ngModel required> 
+          <div class="alert alert-danger" *ngIf="Emailname.invalid">Email is required.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="lead"></p>
+        </div>
+        <div class="col-md-4">
+          <input type="text" [(ngModel)]="WorkNumber" name="WorkNumber" class="form-control mr-3 my-1" placeholder="Work Number" id="inlineFormInputGroup"> </div>
+        <div class="col-md-4">
+          <input type="text" [(ngModel)]="MobileNumber" name="MobileNumber" class="form-control mr-3 my-1" placeholder="Mobile Number" id="inlineFormInputGroup"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <p class="lead"></p>
+        </div>
+        <div class="col-md-4">
+          <input type="text" [(ngModel)]="ApproverName" name="ApproverName" class="form-control mr-3 my-1" placeholder="Approver Name (if applicable)" id="inlineFormInputGroup"> </div>
+        <div class="col-md-5">
+          <input type="text" [(ngModel)]="ApproverEmail" name="ApproverEmail" class="form-control mr-3 my-1" placeholder="Approver Email (if applicable)" id="inlineFormInputGroup"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <a  class="btn btn-lg w-75 m-0 btn-danger" routerLink="/projectlistingpage" routerLinkActive="active">Cancel</a>
+        </div>
+        <div class="col-md-3">
+          <a (click)="addClient()" class="btn btn-lg w-75 text-white btn-success" >Create</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+
+</body>

@@ -1,0 +1,485 @@
+
+<div [hidden]="hideProjectList">
+  <div class="text-white bg-primary text-center py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h1 class="text-left">Projects</h1>
+        </div>
+        <div class="col-md-4">
+        <img style="height:100px ;width:80% " src="../assets/img/arkilio.png">
+        </div>
+        <div class="col-md-5">
+
+          <a class="btn btn-light text-right" routerLink="/company" routerLinkActive="active">Create Company</a>
+          <a class="btn btn-light text-right" routerLink="/project" routerLinkActive="active">Add Project</a>
+          <button  (click)="logout()" class="btn btn-secondary" value="Logout">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table  class="table table-bordered table-striped responsive-utilities table-responsive">
+      <!-- <table class="row-border hover"> -->
+    <thead>
+      <tr class="sorting_asc" aria-controls="DataTables_Table_1" aria-sort="ascending" aria-label="ID:activate to sort column descending">
+        <th>No.</th>
+     
+        <th>Project Name</th>
+      
+        <th>Contract Amount</th>
+     
+        <th>Invoice</th>
+    
+        <th>Date</th>
+     
+        <th>Proposal</th>
+     
+        <th>Contract</th>
+      </tr>
+    </thead>
+    <tbody *ngFor=" let prj of projects">
+      <tr>
+        <td>
+            <p class="lead">{{prj.id}}</p>
+        </td>
+        <td>
+            <p class="lead">{{prj.project_name}}</p>
+        </td>
+        <td>
+            <p class="lead">${{prj.project_cost}}</p>
+        </td>
+        <td>
+            <p class="lead">{{prj.invoice_frequency}}</p>
+        </td>
+        <td>
+            <p class="lead">{{prj.project_deadline | date : 'yyyy-MM-dd':'+1'}}</p>
+        </td>
+        <td *ngIf="prj.proposal_file">
+            <a href={{prj.proposal_file}}  target="_"> <img src="../assets/img/pdf.png"/></a>
+        </td>
+        <td *ngIf="!prj.proposal_file">
+            <p>N/A</p>
+        </td>
+        <td *ngIf="prj.contract_file">
+            <a href={{prj.contract_file}}  target="_"><img src="../assets/img/pdf.png"/></a>
+        </td>
+        <td *ngIf="!prj.contract_file">
+            <p>N/A</p>
+        </td>
+        <td>
+            <button class="btn btn-primary " (click)="editProject(prj)">Edit</button>
+        </td>
+        <td>
+            <button class="btn btn-primary " (click)="delete(prj.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+<!-- <div class="py-3">
+  
+    <div class="container">
+      <div class="row" >
+        <div class="col-md-1">
+          <h5 class="">No.</h5>
+
+        </div>
+        <div class="col-md-2" >
+          <h5 class="" >Project Name</h5>
+
+        </div> -->
+        <!-- <div class="col-md-2">
+          <h5 class="">Client</h5>
+
+        </div> -->
+        <!-- <div class="col-md-2">
+          <h5 class="" >Contract Amount</h5>
+
+        </div>
+        <div class="col-md-1">
+          <h5 class="" >Invoice</h5>
+
+        </div>
+        <div class="col-md-2">
+          <h5 class="" >Date</h5>
+
+        </div>
+        <div class="col-md-1">
+          <h5 class="">Proposal</h5>
+        </div>
+        <div class="col-md-1">
+          <h5 class="">Contract</h5>
+        </div>
+      </div>
+    </div>
+</div> -->
+  
+  <!-- <div class="py-3" >
+    <div class="container" *ngFor=" let prj of projects">
+      <div class="row" >
+        <div class="col-md-1">
+          <p class="lead">{{prj.id}}</p>
+        </div>
+        <div class="col-md-2" >
+          <p class="lead">{{prj.project_name}}</p>
+        </div>  -->
+        <!-- <div class="col-md-2">
+          <p class="lead">{{prj.client.client_name}}</p>
+        </div> --> 
+         <!-- <div class="col-md-2">
+          <p class="lead">${{prj.project_cost}}</p>
+        </div>
+        <div class="col-md-1">
+          <p class="lead">{{prj.invoice_frequency}}</p>
+        </div> 
+        <div class="col-md-2">
+          <p class="lead">{{prj.project_deadline | date : 'yyyy-MM-dd':'+1'}}</p>
+        </div>
+        <div class="col-md-1" *ngIf="prj.proposal_file">
+          <a href={{prj.proposal_file}}  target="_"> <img src="../assets/img/pdf.png"/></a>
+        </div>
+        <div class="col-md-1" *ngIf="!prj.proposal_file">
+          <p>N/A</p>
+        </div>
+        <div class="col-md-1" *ngIf="prj.contract_file">
+          <a href={{prj.contract_file}}  target="_"><img src="../assets/img/pdf.png"/></a>
+        </div>
+        <div class="col-md-1" *ngIf="!prj.contract_file">
+          <p>N/A</p>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-primary " (click)="editProject(prj)">Edit</button>
+        </div>
+        <div class="col-md-1">
+          <button class="btn btn-primary " (click)="delete(prj.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+</div>
+
+<!--edit form-->
+<div [hidden]="!showEditForm">
+  <div class="text-white bg-primary text-center py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h1 class="text-left">Create Project</h1>
+        </div>
+        <!-- <div class="col-md-9">
+          <img src="../assets/img/home.png" >
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+          <p class="lead">Project Name</p>
+        </div>
+        <div class="col-md-8">
+          <input type="text" [(ngModel)]="ProjectName" name="ProjectName" class="form-control mr-3 my-1" placeholder="Project Name" id="inlineFormInputGroup">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+          <p class="lead">Project Description</p>
+        </div>
+        <div class="col-md-8">
+          <input type="text" [(ngModel)]="ProjectDesc" name="ProjectDesc" class="form-control mr-3 my-1" placeholder="Project Description" id="inlineFormInputGroup">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+          <div class="col-md-2">
+            <p class="lead">Project Address</p>
+          </div>
+          <div class="col-md-5">
+            <input type="text" [(ngModel)]="Address" name="Address" class="form-control mr-3 my-1" placeholder="Street Address" id="inlineFormInputGroup">
+          </div>
+          <div class="col-md-3">
+            <input type="text" [(ngModel)]="City" name="City" class="form-control mr-3 my-1" placeholder="City" id="inlineFormInputGroup">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-2"></div>
+          <div class="col-md-2">
+            <input type="text" [(ngModel)]="Province" name="Province"  class="form-control mr-3 my-1" placeholder="Province" id="inlineFormInputGroup">
+          </div>
+          <div class="col-md-2">
+            <input type="text" [(ngModel)]="Country"  name="Country"  class="form-control mr-3 my-1" placeholder="Country" id="inlineFormInputGroup">
+          </div>
+          <div class="col-md-2">
+            <input type="text" [(ngModel)]="PostalCode" name="PostalCode"  class="form-control mr-3 my-1" placeholder="Postal Code" id="inlineFormInputGroup">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-2">
+            <p class="lead">Invoice Frequency</p>
+          </div>
+          <div class="col-md-2"> <label>  <input type="radio" [(ngModel)]="Freq" name="Freq" value="monthly"> Monthly</label> </div>
+          <div class="col-md-2"> <label>  <input type="radio" [(ngModel)]="Freq" name="Freq" value="milestone"> Milestone</label></div>
+          <div class="col-md-4">
+            <p class="">(** if monthly, will send monthly reminders in addition to pre-configured milestone reminders)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="">Payment Phases of Proposal/Contract and Reminders</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="py-1">
+      
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-1">
+            <p class="lead">Total </p>
+          </div>
+            <p class='lead'>$</p>
+          <div class="col-md-2">
+            <input type="text"  [(ngModel)]="TotalCost" name="TotalCost" (keyup)="changeAmount()" class="form-control mr-3 my-1"  id="inlineFormInputGroup">
+          </div>
+          <div class="col-md-2">
+              <ng-datepicker [(ngModel)]="ProjectDue"  position="top-right" name="ProjectDue"  [options]="options" placeholder="YYYY-MM_DD"  ></ng-datepicker>
+           
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+    </div>
+    <table class="table table-bordered table-striped responsive-utilities table-responsive">
+      <thead>
+      <tr>
+        <th>
+            Type
+        </th>
+        <th>
+            Percent
+        </th>
+        <th>
+            Amount
+          </th>
+          <th>
+              Due Date
+            </th>
+            <th>
+                Reminder Date
+              </th>
+              <th>
+                  Complete
+                </th>
+                <th>
+                    Paid
+                  </th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let milestone of milestonedesc; let i =  index">
+        <tr>
+          <td>
+              {{milestonedesc[i]}}
+          </td>
+          <td>
+              <input type="text"  [(ngModel)]="Percent[i]" name="Percent-{{i}}" (keyup)="changeAmount()" class="form-control mr-3 my-1"  id="inlineFormInputGroup" >
+          </td>
+          <td>
+              <p type="text" [(ngModel)]="Amount[i]" name="Amount-{{i}}" class="form-control mr-3 my-1 " placeholder="$" id="inlineFormInputGroup" ngDefaultControl>${{Amount[i]}}</p>
+          </td>
+          <td>
+              <ng-datepicker [(ngModel)]="Deadline[i]" position="top-right" name="Deadline-{{i}}" [options]="options"  placeholder="YYYY-MM_DD"></ng-datepicker>
+          </td>
+          <td>
+              <ng-datepicker [(ngModel)]="Reminder[i]" position="top-right" name="Reminder-{{i}}"  [options]="options" placeholder="YYYY-MM_DD"></ng-datepicker>
+          </td>
+          <td>
+              <input type="checkbox" [(ngModel)]="Complete[i]" name="Complete"  value="on" name="check2">
+          </td>
+          <td>
+              <input type="checkbox" [(ngModel)]="Paid[i]" name="Paid" value="on" name="check2">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+     
+
+    
+
+    <div class="p-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <p class="lead">Reminder Recipient 1</p>
+          </div>
+          <div class="col-md-8">
+            <input type="text" [(ngModel)]="Reminder1" name="Reminder1" class="form-control mr-3 my-1" placeholder="Email" id="inlineFormInputGroup">
+          </div>
+          <div class="col-md-2">
+            <div class="btn-group">
+              <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <p class="lead">Reminder Recipient 2</p>
+        </div>
+        <div class="col-md-8">
+          <input type="text" [(ngModel)]="Reminder2" name="Reminder2" class="form-control mr-3 my-1" placeholder="Email" id="inlineFormInputGroup">
+        </div>
+        <div class="col-md-2">
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <p class="lead">Reminder Recipient 3</p>
+        </div>
+        <div class="col-md-8">
+          <input type="text" [(ngModel)]="Reminder3" name="Reminder3" class="form-control mr-3 my-1" placeholder="Email" id="inlineFormInputGroup">
+        </div>
+        <div class="col-md-2">
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Email&nbsp;</button>
+            <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="">Proposal/Contract Documents</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <form method="POST" action="http://localhost:3000/upload" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col-md-2">
+            <p class="lead">Proposal</p>
+          </div>
+          <div class="col-md-5">
+            <input type="text" [(ngModel)]="Proposal"  name="Proposal" class="form-control mr-3 my-1" placeholder="copy your google drive link " id="inlineFormInputGroup">
+          </div>
+          <div class="col-md-2">
+            <input  class="btn btn-primary text-center mx-auto" type="file">
+          </div>
+          <div class="col-md-2">
+            <input type="submit" value="Submit" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <form method="POST" action="http://localhost:3000/upload" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col-md-2">
+            <p class="lead">Contract</p>
+          </div>
+          <div class="col-md-5">
+            <input type="text" [(ngModel)]="Contract" name="Contract" class="form-control mr-3 my-1" placeholder="copy your google drive link " id="inlineFormInputGroup">
+          </div>
+          <div class="col-md-2">
+            <input  [(ngModel)]="Contract" name="Contract" class="btn btn-primary text-center mx-auto" type="file">
+          </div>
+          <div class="col-md-2">
+            <input type="submit" value="Submit" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="btn btn-light" href="">Add Document</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <a  class="btn btn-lg w-75 m-0 btn-danger" (click)="cancel()" >Cancel</a>
+        </div>
+        <div class="col-md-3">
+          <a (click)="addSave()" class="btn btn-lg w-75 text-white btn-success"  >Save</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

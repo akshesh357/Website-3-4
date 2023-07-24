@@ -1,0 +1,85 @@
+git checkout master
+
+
+
+this is for login page 
+1)	<div ng-app="clientApp" ng-controller="AppCtrl">
+ 2)     <form action="/login"  target="ArkilioProjectsPage" method="post"> 
+
+*for client 
+<div ng-app="clientApp" ng-controller="ClientCtrl">
+
+for project.html
+<div ng-app="clientApp" ng-controller="ClientCtrl">
+
+
+$ npm install -g loopback-sdk-angular-cli
+
+$ mkdir -p client/js/services
+$ lb-ng server/server.js client/js/services/lb-services.js
+
+ng new arkMVP --routing
+cd arkMVP
+ng serve
+ng generate component project --routing
+
+loopback sdk
+$ npm install --save @mean-expert/{loopback-component-realtime,loopback-sdk-builder}
+./node_modules/.bin/lb-sdk  ../ArkilioNG/server/server src/app/shared/sdk
+
+<label>Check me to check both: <input type="checkbox" ng-model="leader"></label><br/>
+<input id="checkFollower" type="checkbox" ng-checked="leader" aria-label="Follower input">
+
+ <label>Value2:
+    <input type="checkbox" ng-model="checkboxModel.value2"
+           ng-true-value="'YES'" ng-false-value="'NO'">
+   </label><br/>
+
+<label>
+    <input type="radio" ng-model="color.name" value="red">
+    Red
+  </label>
+
+{
+ "email":"ladi@arkilio.com",
+ "password":"arkilio1"
+}
+
+$scope.clientLogin = function () {
+var client = User.login ({
+"email":"abc@gmail.com",
+"password":"abcd123"
+});
+client.$promise.then(function(token){
+if (token) {
+
+ console.log(token);
+
+     // err.render('response', { //render view named 'response.ejs'
+     //   title: 'Login failed',
+     //   content: err,
+     //   redirectTo: '/',
+     //   redirectToLinkText: 'Try again'
+     // });
+     // return;
+}
+// res.render('home', { //login user and render 'home' view
+//      email: req.body.email,
+//      accessToken: token.id
+//    });
+  console.log('hi'+token);
+});
+};
+{ 
+"client_name": "ekta",
+       "company_name":"lambton",
+        "address":"23union",
+       "city":"toronto",
+        "province":"ON",
+        "postal_code":"M1P3D4",
+        "email":"abca@gmail.com",
+        "contact":"9547",
+        "username":"abca@gmail.com",
+        "password":"abc123"
+}
+

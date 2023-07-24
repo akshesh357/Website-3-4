@@ -1,0 +1,69 @@
+{
+  "name": "Milestone",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "typeof_milestone": {
+      "type": "string",
+      "required": false
+    },
+    "percentage": {
+      "type": "number",
+      "required": false
+    },
+    "priceof_milestone": {
+      "type": "string",
+      "required": false
+    },
+    "deadline": {
+      "type": "date",
+      "required": false
+    },
+    "reminder": {
+      "type": "date",
+      "required": false
+    },
+    "completed": {
+      "type": "boolean",
+      "required": false
+    },
+    "paid": {
+      "type": "boolean",
+      "required": false
+    },
+    "project_id": {
+      "type": "number",
+      "required": false
+    },
+    "file_upload": {
+      "type": "object",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "project": {
+      "type": "belongsTo",
+      "model": "Project",
+      "foreignKey": "project_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

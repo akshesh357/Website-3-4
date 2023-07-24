@@ -1,0 +1,33 @@
+{
+  "name": "user_service_provider",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "usp_id": {
+      "type": "number",
+      "required": true
+    },
+    "timestamp": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "petUsers": {
+      "type": "hasMany",
+      "model": "pet_user",
+      "foreignKey": "user_id"
+    },
+    "providers": {
+      "type": "hasMany",
+      "model": "provider",
+      "foreignKey": "provider_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

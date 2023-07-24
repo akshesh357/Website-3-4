@@ -1,0 +1,44 @@
+<html lang="en" >
+<head>
+<!-- Load Stylesheet -->
+<link rel="stylesheet" href="">
+
+</head>
+<body>
+  <div ng-app="clientApp" ng-controller="AppCtrl">
+  <!-- <div ng-repeat="provider_type in provider_types">
+    {{provider_type.provider_type_name}}
+
+  </div> -->
+  id:<input ng-model="add"><br><br>
+  Name:<input ng-model="addMe"><br><br>
+  
+CompanyName:<input ng-model="addCName"><br><br>
+  Address:<input ng-model="addAddress"><br><br>
+  City:<input ng-model="addCity"><br><br>
+  Province:<input ng-model="addProvince"><br><br>
+  PostalCode:<input ng-model="addCode"><br><br>
+  Email:<input ng-model="addEmail"><br><br>
+  PhoneNumber:<input ng-model="addNumber"><br><br>
+  <button ng-click="addItem()">Add</button><br>
+  
+
+
+  <select>
+
+<option ng-repeat="client_details in clients" >{{client_details.client_name}}</option>
+<!-- {{dosome()}}-->
+</select>
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script>
+
+
+<script src="app.js"></script>
+<script src="lb-services.js"></script>
+
+</body>
+</html>

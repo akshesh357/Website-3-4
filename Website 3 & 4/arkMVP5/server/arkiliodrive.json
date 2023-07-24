@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nifty-province-151715",
+  "private_key_id": "b72a9b0ca8632593ab6e626e34a5029be7600c48",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCZAzyJiMDMoPhn\nOePQVeWC+iqAWaWUY8GLiXdLVZfAk/SxI3wNMVsDeiYKw9o2VHIIpQ9UJoiMKpWx\nNPnjCqp+3g4AC2/lzBDv7vxeVJKTwHw0L4OidEudulTcQmXRCMNPRMVNc/7IX+vF\nIaXxISWOAcssagALqzg8y2Mv2gJoaDZKkugqsj8IePEF4EA8xYA+s/mGxJQMH6Gw\nvEqERq36VsyZXKga2IFHLXQm+eIxo1I1cGNKTyjIehGvTHfXhJ8u5aAsBIWgqBQC\nooUzDaO+gP3QjME1OZa3ssgbWLYQpCKrn4vpQrnmAIr+uHRuQFJBKXblk5LfWcbX\n8Q0DrjFzAgMBAAECggEADEAdFanUPc3ZdXJGEgT+hhj/VB1ZS2MdOM29tlNY/fsa\niSAdK3U7IzEhYJVDoDvskVKdwo//OLGkIHbsVsgg1F10434G7HAFHyCUJf1BawDr\nMMZpFJWZBDzJ1ISgYDcCZBNOdKAH0wUS/EpwXbjYp+Du4lRuQoDn1L4357ndnXwy\nwkoDScF1hdkNp9+ayp9w1oJedwinu+Mh+FcSPKgXqetpn1hn2OOm4y50AnousjGb\neBoBNtRAbZPDvBjLiS7juRKngUcJlhzHUDQ2xQiWhjIpOPaKx5uhKVN6igdwpIq0\nnhNaJpQIf23s6Jn1WgesZ/4UU4brSmHs5EQuJZluoQKBgQDJXfpNJ384e5cgA7YO\nYw4/V563+jtbZQNRKyEHc1MF/n58Km4/PpDe05H50gk0DFY8bkRNJPwbfwDSfJM6\nYchIGyjqVhl9H0NvDWBGx+aUo49eHTG6sl0BEgOO5GvejJrUL9Vxd8ffderxuF7a\nVHA2he+F4gdyIM+7EvGmr1SAYwKBgQDChshwrJwa7fIWcJy4f8jxFcPHQxn97qSX\nY/CEs6ZPChZ+pijyrV5VLTxgkv3L1yAFDqzHT0LK1/qrwx2R3gcKuRE8G8Iz68kt\n6W0Io+CtStJtPvRiYAF7G5QBX8/gcfeWjoa2q+vMRCclhQ0mkTNG1DtXP2aFFxUI\n4a665JfvsQKBgQCOn2NzVjBDfzXw1PATjJFAx/yA7lkwSIFq8hM4xbPeIPzRUPQ5\nE0VkrZFM0jj2hm5l6uuxgCqYBwI8E0PsK+nBOItoPodbGdOXSnAQcfGdAaO/0wmv\n5Dj/UxT2Fk9Yl1nqQ973uRD18vzvK9jy5q97zq1xtD/108uOAsLpfnFpZQKBgQCm\nSwSk1dppZwpyRnijfJHyDvIbsPBSVSUdSlE9kDpXDT+nqzIMK0seM5qO0HnoPRJh\nYGcxxz9JGpNvLFBl91E7yHPEV9KQAjwsZIVSQo36dqEmxQ+z3XDGpg/DkP2rWKIY\nceUV2iisqYJxn6lbU/tqzFmiP0/L7KyNuChgGrUMMQKBgCuutJKmiOoDAT6kJwco\nsIN/cORJ5uMNGjrfyOmiUgeMEoD97v906ZiDflGLqa/7JTwg+tIE5FJWzPNCY8nj\njz1tMb8oW9lfCYGIsXWutedqlcrTRJGPshHrjgn1Wdu7Da2oE9qGzNvQICtYqRIt\nBpwISaADKdEwgoZFg5IJM38H\n-----END PRIVATE KEY-----\n",
+  "client_email": "arkiliodrive@nifty-province-151715.iam.gserviceaccount.com",
+  "client_id": "108208090825717884778",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/arkiliodrive%40nifty-province-151715.iam.gserviceaccount.com"
+}

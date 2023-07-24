@@ -1,0 +1,18 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysqlDs": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "arkilio",
+    "password": "password",
+    "name": "mysqlDs",
+    "user": "root",
+    "connector": "mysql",
+    "connectTimeout": 100000,
+    "acquireTimeout": 100000
+  }
+}

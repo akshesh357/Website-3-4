@@ -1,0 +1,49 @@
+{
+  "name": "Project",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "project_name": {
+      "type": "string",
+      "required": true
+    },
+    "project_description": {
+      "type": "string",
+      "required": true
+    },
+    "project_cost": {
+      "type": "string",
+      "required": true
+    },
+    "project_deadline": {
+      "type": "date",
+      "required": true
+    },
+    "invoice_frequency": {
+      "type": "string",
+      "required": true
+    },
+    "client_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "milestone": {
+      "type": "hasMany",
+      "model": "Milestone",
+      "foreignKey": "id"
+    },
+    "client": {
+      "type": "belongsTo",
+      "model": "Client",
+      "foreignKey": "id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

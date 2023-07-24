@@ -1,0 +1,18 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "xamppDs": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "test",
+    "password": "",
+    "name": "xamppDs",
+    "user": "",
+    "connector": "mysql",
+    "connectTimeout": 100000,
+    "acquireTimeout": 100000
+  }
+}

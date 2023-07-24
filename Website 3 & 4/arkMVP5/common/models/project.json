@@ -1,0 +1,94 @@
+{
+  "name": "Project",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "project_name": {
+      "type": "string",
+      "required": true
+    },
+    "project_description": {
+      "type": "string"
+    },
+    "project_cost": {
+      "type": "string"
+    },
+    "project_deadline": {
+      "type": "date"
+    },
+    "invoice_frequency": {
+      "type": "string"
+    },
+    "client_id": {
+      "type": "number",
+      "required": true
+    },
+    "project_address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "postal_code": {
+      "type": "string"
+    },
+    "reminder_1": {
+      "type": "string"
+    },
+    "reminder_2": {
+      "type": "string"
+    },
+    "reminder_3": {
+      "type": "string"
+    },
+    "proposal_file": {
+      "type": "object"
+    },
+    "contract_file": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "milestone": {
+      "type": "hasMany",
+      "model": "Milestone",
+      "foreignKey": "project_id"
+    },
+    "client": {
+      "type": "belongsTo",
+      "model": "Client",
+      "foreignKey": "client_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,70 @@
+{
+  "name": "provider",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "provider_id": {
+      "type": "number",
+      "required": true
+    },
+    "provider_name": {
+      "type": "string",
+      "required": true
+    },
+    "provider_contact_details": {
+      "type": "string",
+      "required": true
+    },
+    "provider_address": {
+      "type": "string",
+      "required": true
+    },
+    "provider_image": {
+      "type": "string",
+      "required": true
+    },
+    "provider_description": {
+      "type": "string",
+      "required": true
+    },
+    "provider_link_url": {
+      "type": "string",
+      "required": true
+    },
+    "provider_emergency": {
+      "type": "boolean",
+      "required": true
+    },
+    "provider_mobile_grooming": {
+      "type": "boolean",
+      "required": true
+    },
+    "provider_link_text": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "petTypes": {
+      "type": "hasMany",
+      "model": "pet_type",
+      "foreignKey": "pet_type_id"
+    },
+    "providerTypes": {
+      "type": "hasMany",
+      "model": "provider_type",
+      "foreignKey": "provider_type_id"
+    },
+    "userServiceProviders": {
+      "type": "hasMany",
+      "model": "user_service_provider",
+      "foreignKey": "provider_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

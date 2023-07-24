@@ -1,0 +1,33 @@
+{
+  "name": "pet_type",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "pet_type_id": {
+      "type": "number",
+      "required": true
+    },
+    "pet_type_name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "providers": {
+      "type": "hasMany",
+      "model": "provider",
+      "foreignKey": "pet_type_id"
+    },
+    "petUsers": {
+      "type": "hasMany",
+      "model": "pet_user",
+      "foreignKey": "pet_type_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

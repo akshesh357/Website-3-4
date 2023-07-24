@@ -1,0 +1,87 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"> </head>
+
+  <body class="p-0">
+    <div ng-app="clientApp" ng-controller="AppCtrl">
+      <form action="/login"  target="ProjectListingComponent" method="post">
+        <div class="py-5 text-white bg-primary text-center" >
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="text-left">LogIn </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="py-4" >
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control mr-3 my-1" placeholder="username" id="inlineFormInputGroup"> </div>
+                <div class="col-md-3"></div>
+              </div>
+            </div>
+          </div>
+          <div class="py-4">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+                  <p class="lead"></p>
+                </div>
+                <div class="col-md-3">
+                  <input type="password" class="form-control mr-3 my-1" placeholder="password" id="inlineFormInputGroup"> </div>
+                </div>
+              </div>
+            </div>
+            <div class="py-4">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-3">
+                    <p class="lead"></p>
+                  </div>
+                  <div class="col-md-3">
+                    <input type="submit" class="btn btn-lg btn-light text-left" value="LogIn">
+                    <!-- <a class="btn btn-lg btn-light text-left" ng-href="/ArkilioProjectsPage.html ">LogIn</a> -->
+
+                  </div>
+                  <div class="col-md-3"></div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </body>
+
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-resource.min.js"></script>
+
+
+      <script src="clientApp.js"></script>
+      <script src="lb-services.js"></script>
+
+<app-invoice></app-invoice>
+
+<app-project></app-project>
+
+<app-project-listing></app-project-listing>
+
+<app-client></app-client>
+
+      </html>

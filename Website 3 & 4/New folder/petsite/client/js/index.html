@@ -1,0 +1,33 @@
+<html lang="en" >
+<head>
+<!-- Load Stylesheet -->
+<link rel="stylesheet" href="">
+
+</head>
+<body>
+  <div ng-app="petApp" ng-controller="AppCtrl">
+  <!-- <div ng-repeat="provider_type in provider_types">
+    {{provider_type.provider_type_name}}
+
+  </div> -->
+  id:<input ng-model="add"><br><br>
+  Name:<input ng-model="addMe"><br><br>
+  <button ng-click="addItem()">Add</button><br>
+  <br>
+
+  <select>
+
+<option ng-repeat="provider_type in provider_types" >{{provider_type.provider_type_name}}</option>
+<!-- {{dosome()}}-->
+</select>
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+
+<script src="app.js"></script>
+<script src="pet-services.js"></script>
+
+</body>
+</html>
